@@ -73,3 +73,10 @@ class Prescription(models.Model):
     diet=models.CharField(max_length=200,blank=False,default='')
     medicine=models.CharField(max_length=1000,blank=False,default='')
     
+    
+class Blog(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    title=models.CharField(max_length=150,default='')
+    content=models.CharField(max_length=5000,default='')
+    summary=models.CharField(max_length=5500,default='')
+    image=models.ImageField(upload_to='static/')

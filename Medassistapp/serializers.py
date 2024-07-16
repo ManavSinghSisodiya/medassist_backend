@@ -7,6 +7,8 @@ from Medassistapp.models import Timings
 from Medassistapp.models import Questions,SubQuestions,Patient
 from Medassistapp.models import Answers
 from Medassistapp.models import Prescription
+from Medassistapp.models import Blog
+
 class CategorySerializer(serializers.ModelSerializer):
  
     class Meta:
@@ -94,3 +96,14 @@ class PrescriptionGetSerializer(serializers.ModelSerializer):
     class Meta:
         model=Prescription
         fields="__all__"          
+        
+class Blogserializer(serializers.ModelSerializer):
+    class Meta:
+        model=Blog
+        fields='__all__'
+        
+class BlogGetserializer(serializers.ModelSerializer):
+    category=CategorySerializer(many=False)
+    class Meta:
+        model=Blog
+        fields='__all__'

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from Medassistapp import statecity
 from Medassistapp import category
-from Medassistapp import answer, doctor,timings,questions,user,subquestions,presciption
+from Medassistapp import answer, doctor,timings,questions,user,subquestions,presciption,Blog
 from django.urls import include, re_path
 
 
@@ -46,5 +46,7 @@ urlpatterns = [
     re_path(r'^api/answerlist',answer.Answer_List),
     re_path(r'^api/prescriptionsubmit',presciption.Prescription_Submit),
     re_path(r'^api/showprescription',presciption.Prescription_List),
+    re_path(r'^api/blogsubmit',Blog.Submit_blog),
+    re_path(r'^api/bloglist',Blog.BlogList),
 
 ]
